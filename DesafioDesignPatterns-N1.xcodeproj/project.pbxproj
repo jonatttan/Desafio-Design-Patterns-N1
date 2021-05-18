@@ -16,6 +16,12 @@
 		89BDFBFE2654614300436ED1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89BDFBFC2654614300436ED1 /* LaunchScreen.storyboard */; };
 		89BDFC092654614300436ED1 /* DesafioDesignPatterns_N1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BDFC082654614300436ED1 /* DesafioDesignPatterns_N1Tests.swift */; };
 		89BDFC142654614300436ED1 /* DesafioDesignPatterns_N1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BDFC132654614300436ED1 /* DesafioDesignPatterns_N1UITests.swift */; };
+		89BDFC2526546A0C00436ED1 /* Verificador.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BDFC2426546A0C00436ED1 /* Verificador.swift */; };
+		89BDFC2A26546A3200436ED1 /* Documento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BDFC2926546A3200436ED1 /* Documento.swift */; };
+		89BDFC362654735300436ED1 /* CPF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BDFC352654735300436ED1 /* CPF.swift */; };
+		89BDFC3B265473D700436ED1 /* VerificadorCPF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BDFC3A265473D700436ED1 /* VerificadorCPF.swift */; };
+		89BDFC402654742600436ED1 /* VerificadorCNPJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BDFC3F2654742600436ED1 /* VerificadorCNPJ.swift */; };
+		89BDFC452654752B00436ED1 /* CNPJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BDFC442654752B00436ED1 /* CNPJ.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,13 @@
 		89BDFC0F2654614300436ED1 /* DesafioDesignPatterns-N1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DesafioDesignPatterns-N1UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89BDFC132654614300436ED1 /* DesafioDesignPatterns_N1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioDesignPatterns_N1UITests.swift; sourceTree = "<group>"; };
 		89BDFC152654614300436ED1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89BDFC2426546A0C00436ED1 /* Verificador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verificador.swift; sourceTree = "<group>"; };
+		89BDFC2926546A3200436ED1 /* Documento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Documento.swift; sourceTree = "<group>"; };
+		89BDFC2E26546AA500436ED1 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		89BDFC352654735300436ED1 /* CPF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPF.swift; sourceTree = "<group>"; };
+		89BDFC3A265473D700436ED1 /* VerificadorCPF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificadorCPF.swift; sourceTree = "<group>"; };
+		89BDFC3F2654742600436ED1 /* VerificadorCNPJ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificadorCNPJ.swift; sourceTree = "<group>"; };
+		89BDFC442654752B00436ED1 /* CNPJ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNPJ.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +94,7 @@
 		89BDFBE22654613F00436ED1 = {
 			isa = PBXGroup;
 			children = (
+				89BDFC2E26546AA500436ED1 /* MyPlayground.playground */,
 				89BDFBED2654613F00436ED1 /* DesafioDesignPatterns-N1 */,
 				89BDFC072654614300436ED1 /* DesafioDesignPatterns-N1Tests */,
 				89BDFC122654614300436ED1 /* DesafioDesignPatterns-N1UITests */,
@@ -101,6 +115,12 @@
 		89BDFBED2654613F00436ED1 /* DesafioDesignPatterns-N1 */ = {
 			isa = PBXGroup;
 			children = (
+				89BDFC2426546A0C00436ED1 /* Verificador.swift */,
+				89BDFC3F2654742600436ED1 /* VerificadorCNPJ.swift */,
+				89BDFC3A265473D700436ED1 /* VerificadorCPF.swift */,
+				89BDFC2926546A3200436ED1 /* Documento.swift */,
+				89BDFC442654752B00436ED1 /* CNPJ.swift */,
+				89BDFC352654735300436ED1 /* CPF.swift */,
 				89BDFBEE2654613F00436ED1 /* AppDelegate.swift */,
 				89BDFBF02654613F00436ED1 /* SceneDelegate.swift */,
 				89BDFBF22654613F00436ED1 /* ViewController.swift */,
@@ -261,10 +281,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89BDFC452654752B00436ED1 /* CNPJ.swift in Sources */,
+				89BDFC2A26546A3200436ED1 /* Documento.swift in Sources */,
+				89BDFC2526546A0C00436ED1 /* Verificador.swift in Sources */,
 				89BDFBF32654613F00436ED1 /* ViewController.swift in Sources */,
 				89BDFBF92654613F00436ED1 /* DesafioDesignPatterns_N1.xcdatamodeld in Sources */,
+				89BDFC362654735300436ED1 /* CPF.swift in Sources */,
 				89BDFBEF2654613F00436ED1 /* AppDelegate.swift in Sources */,
+				89BDFC3B265473D700436ED1 /* VerificadorCPF.swift in Sources */,
 				89BDFBF12654613F00436ED1 /* SceneDelegate.swift in Sources */,
+				89BDFC402654742600436ED1 /* VerificadorCNPJ.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
