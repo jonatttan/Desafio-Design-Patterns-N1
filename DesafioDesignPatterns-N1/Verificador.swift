@@ -13,8 +13,8 @@ class Verificador {
     init(_ documento: String) {
         self.documento = documento
     }
-    func verifica() {
-        imprimeResultado(verificaValidade())
+    func verifica() -> String {
+        return imprimeResultado(verificaValidade())
     }
     func verificaValidade() -> Bool {
         var valido = true
@@ -52,7 +52,7 @@ class Verificador {
         val = val == 10 ? 0 : val
         return val
     }
-    func imprimeResultado(_ statusDocumento: Bool) {
-        print("O documento \(documento) é \(statusDocumento ? "válido" : "inválido")")
+    func imprimeResultado(_ statusDocumento: Bool) -> String {
+        return ("\(statusDocumento ? "Válido" : "Inválido")")
     }
 }

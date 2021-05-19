@@ -11,12 +11,31 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var lbNumeroDocumento: UITextField!
     
+    @IBOutlet weak var lbStatusDoc: UILabel!
+    
     @IBAction func btnValidar(_ sender: UIButton) {
+        guard let numeroDocumento = lbNumeroDocumento.text else { return }
+        if numeroDocumento.count == 11 {
+            cadastraCpf(numeroDocumento)
+        }
+        else if numeroDocumento.count == 14 {
+            cadastraCnpj(numeroDocumento)
+        }
+        else {
+            lbStatusDoc.text = "Qnt dígitos inválido"
+        }
+        lbStatusDoc.textColor = lbStatusDoc.text == "Válido" ? .green : .red
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        teste()
+//        teste()
+    }
+    func cadastraCpf(_ doc: String) {
+        lbStatusDoc.text = CPF(doc).verificador.verifica()
+    }
+    func cadastraCnpj(_ doc: String) {
+        lbStatusDoc.text = CNPJ(doc).verificador.verifica()
     }
     
     func teste() {
@@ -32,5 +51,6 @@ class ViewController: UIViewController {
             obj.verificador.verifica()
         }
     }
+    
 }
 
