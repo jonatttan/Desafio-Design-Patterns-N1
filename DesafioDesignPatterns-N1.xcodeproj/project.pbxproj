@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8903D332265597D000E0CBC5 /* TelaViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903D331265597D000E0CBC5 /* TelaViewCode.swift */; };
 		89BDFBEF2654613F00436ED1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BDFBEE2654613F00436ED1 /* AppDelegate.swift */; };
 		89BDFBF12654613F00436ED1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BDFBF02654613F00436ED1 /* SceneDelegate.swift */; };
 		89BDFBF32654613F00436ED1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BDFBF22654613F00436ED1 /* ViewController.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8903D331265597D000E0CBC5 /* TelaViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaViewCode.swift; sourceTree = "<group>"; };
 		89BDFBEB2654613F00436ED1 /* DesafioDesignPatterns-N1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesafioDesignPatterns-N1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89BDFBEE2654613F00436ED1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89BDFBF02654613F00436ED1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				89BDFBEE2654613F00436ED1 /* AppDelegate.swift */,
 				89BDFBF02654613F00436ED1 /* SceneDelegate.swift */,
 				89BDFBF22654613F00436ED1 /* ViewController.swift */,
+				8903D331265597D000E0CBC5 /* TelaViewCode.swift */,
 				89BDFBF42654613F00436ED1 /* Main.storyboard */,
 				89BDFBFA2654614300436ED1 /* Assets.xcassets */,
 				89BDFBFC2654614300436ED1 /* LaunchScreen.storyboard */,
@@ -290,6 +293,7 @@
 				89BDFBEF2654613F00436ED1 /* AppDelegate.swift in Sources */,
 				89BDFC3B265473D700436ED1 /* VerificadorCPF.swift in Sources */,
 				89BDFBF12654613F00436ED1 /* SceneDelegate.swift in Sources */,
+				8903D332265597D000E0CBC5 /* TelaViewCode.swift in Sources */,
 				89BDFC402654742600436ED1 /* VerificadorCNPJ.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
