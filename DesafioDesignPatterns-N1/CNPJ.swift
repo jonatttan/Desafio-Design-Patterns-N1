@@ -9,6 +9,7 @@ import Foundation
 
 class CNPJ: Documento {
     
+    // MARK: - Inicializador
     init(_ documento: String) {
         super.init(documento, VerificadorCNPJ(documento))
     }

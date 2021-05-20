@@ -8,11 +8,15 @@
 import Foundation
 
 class Verificador {
+    // MARK: - Variaveis
     private let documento: String
     
+    // MARK: - Inicializador
     init(_ documento: String) {
         self.documento = documento
     }
+    
+    // MARK: - Procedimentos
     func verifica() -> String {
         return imprimeResultado(verificaValidade())
     }
@@ -51,6 +55,14 @@ class Verificador {
         val %= 11
         val = val == 10 ? 0 : val
         return val
+    }
+    func comparaDigitosVerificadores(_ first: Int, _ second: Int, _ dv: Array<Int>.SubSequence) -> Bool {
+        if first == dv.first {
+            if second == dv.last {
+                return true
+            }
+        }
+        return false
     }
     func imprimeResultado(_ statusDocumento: Bool) -> String {
         return ("\(statusDocumento ? "Válido" : "Inválido")")

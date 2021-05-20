@@ -9,6 +9,7 @@ import Foundation
 
 class CPF: Documento {
     
+    // MARK: - Inicializador
     init(_ documento: String) {
         super.init(documento, VerificadorCPF(documento))
     }

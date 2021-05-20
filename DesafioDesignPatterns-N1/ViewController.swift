@@ -9,10 +9,15 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // MARK: - IBOutlets
     @IBOutlet weak var lbNumeroDocumento: UITextField!
-    
     @IBOutlet weak var lbStatusDoc: UILabel!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    // MARK: - IBActions
     @IBAction func btnValidar(_ sender: UIButton) {
         guard let numeroDocumento = lbNumeroDocumento.text else { return }
         if numeroDocumento.count == 11 {
@@ -26,30 +31,11 @@ class ViewController: UIViewController {
         }
         lbStatusDoc.textColor = lbStatusDoc.text == "Válido" ? .green : .red
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-//        teste()
-    }
     func cadastraCpf(_ doc: String) {
         lbStatusDoc.text = CPF(doc).verificador.verifica()
     }
     func cadastraCnpj(_ doc: String) {
         lbStatusDoc.text = CNPJ(doc).verificador.verifica()
-    }
-    
-    func teste() {
-        let documento1 = "24486510941"
-        let documento2 = "08881145000150"
-        let documento3 = "07624048000110"
-        var listaOjbDoc: [Documento] = []
-        listaOjbDoc.append(CPF(documento1))
-        listaOjbDoc.append(CNPJ(documento2))
-        listaOjbDoc.append(CNPJ(documento3))
-
-        for obj in listaOjbDoc {
-            obj.verificador.verifica()
-        }
     }
     
 }

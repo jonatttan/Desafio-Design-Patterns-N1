@@ -8,6 +8,8 @@
 import Foundation
 
 class VerificadorCPF: Verificador {
+    
+    // MARK: - Procedimentos
     override func verificaValidade() -> Bool {
         let doc = transformaParaArrayDeInt()
         let verificador = doc[9...10]
@@ -16,11 +18,6 @@ class VerificadorCPF: Verificador {
         let primeiroDigito = calculoPrimeiroDigito(primeirosDigitos, baseDeMultiplicar)
         let segundoDigito = calculoSegundoDigito(primeirosDigitos, primeiroDigito, baseDeMultiplicar)
         
-        if primeiroDigito == verificador.first {
-            if segundoDigito == verificador.last {
-                return true
-            }
-        }
-        return false
+        return comparaDigitosVerificadores(primeiroDigito, segundoDigito, verificador)
     }
 }

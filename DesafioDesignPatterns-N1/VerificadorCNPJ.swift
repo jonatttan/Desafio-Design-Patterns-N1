@@ -8,6 +8,8 @@
 import Foundation
 
 class VerificadorCNPJ: Verificador {
+    
+    // MARK: - Procedimentos
     override func verificaValidade() -> Bool {
         let doc = transformaParaArrayDeInt()
         let verificador = doc[12...13]
@@ -18,12 +20,5 @@ class VerificadorCNPJ: Verificador {
         
         return comparaDigitosVerificadores(primeiroDigito, segundoDigito, verificador)
     }
-    func comparaDigitosVerificadores(_ first: Int, _ second: Int, _ dv: Array<Int>.SubSequence) -> Bool {
-        if first == dv.first {
-            if second == dv.last {
-                return true
-            }
-        }
-        return false
-    }
+    
 }
