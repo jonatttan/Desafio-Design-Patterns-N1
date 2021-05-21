@@ -9,23 +9,29 @@ import UIKit
 
 class Bridge {
     
+    private var tipo: Int = -2
+    private var arrayDoc: [Int] = []
+    
     func create(_ doc: String) -> Documento {
+        tipo = verificaTipoDeDoc(doc: doc)
         let arrayDoc = transformaParaArrayDeInt(doc)
-        if arrayDoc.count == 11 {
+        switch tipo {
+        case 1:
             return CPF(arrayDoc)
-        }
-        else if doc.count == 14 {
+        case 2:
             return CNPJ(arrayDoc)
-        }
-        else {
+        default:
             return Documento(arrayDoc, Verificador(arrayDoc))
         }
     }
     func criaEChecaValidade(_ numeroDocumento: String) -> String {
-        let tipo = verificaTipoDeDoc(doc: numeroDocumento)
-        let arrayDoc = transformaParaArrayDeInt(numeroDocumento)
+        tipo = verificaTipoDeDoc(doc: numeroDocumento)
+        arrayDoc = transformaParaArrayDeInt(numeroDocumento)
         if tipo == 0 {
             return ""
+        }
+        else if tipo == -1 {
+            return "Dado insuficiente"
         }
         else if arrayDoc == [0,0,0,0,0] {
             return "Forneça apenas números"
@@ -34,14 +40,8 @@ class Bridge {
             return "Sequência inválida"
         }
         else {
-            switch tipo {
-            case -1:
-                return "Dado insuficiente"
-            case 1:
-                return "CPF \(CPF(arrayDoc).verificador.verifica())"
-            default:
-                return "CNPJ \(CNPJ(arrayDoc).verificador.verifica())"
-            }
+            let objDoc = create(numeroDocumento)
+            return "\(type(of: objDoc)) \(objDoc.verificador.verifica())"
         }
     }
     func verificaTipoDeDoc(doc: String) -> Int {
