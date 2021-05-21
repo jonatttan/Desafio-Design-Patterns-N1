@@ -10,11 +10,11 @@ import Foundation
 class Documento {
     
     // MARK: - Variaveis
-    let documento: String
+    let documento: [Int]
     let verificador: Verificador
     
     // MARK: - Inicializador
-    init(_ documento: String, _ verificador: Verificador) {
+    init(_ documento: [Int], _ verificador: Verificador) {
         self.documento = documento
         self.verificador = verificador
     }

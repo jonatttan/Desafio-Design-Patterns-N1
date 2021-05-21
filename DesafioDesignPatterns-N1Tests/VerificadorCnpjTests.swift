@@ -14,7 +14,7 @@ class VerificadorCnpjTests: XCTestCase {
     var objCnpj: Documento!
     var contador: Int!
     override func setUp() {
-        objCnpj = CNPJ("79270349000101")
+        objCnpj = Bridge().create("79270349000101")
     }
     
     override func tearDown() {
@@ -22,7 +22,7 @@ class VerificadorCnpjTests: XCTestCase {
     }
     func testDocDeveconter14Digitos() {
         let contaDigitos = objCnpj.documento.count
-        XCTAssertEqual(14, contaDigitos, "Documento nao possuia quantidade de digitos indicada.")
+        XCTAssertEqual(14, contaDigitos, "Documento nao possui a quantidade de digitos indicada.")
     }
     func testPrimeirosDigitosDeveConter12Digitos() {
         contador = objCnpj.verificador.primeirosDigitos.count

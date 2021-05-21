@@ -9,12 +9,12 @@ import Foundation
 
 class VerificadorCPF: Verificador, VerificadorProtocol {
     
-    override init(_ documento: String) {
+    override init(_ documento: [Int]) {
         super.init(documento)
         setValues()
     }
     func setValues() {
-        super.setValues(transformaParaArrayDeInt(doc)[0...8], transformaParaArrayDeInt(doc)[9...10], [1,2,3,4,5,6,7,8,9])
+        super.setValues(doc[0...8], doc[9...10], [1,2,3,4,5,6,7,8,9])
     }
     
     // MARK: - Procedimentos

@@ -10,14 +10,15 @@ import UIKit
 class Bridge {
     
     func create(_ doc: String) -> Documento {
-        if doc.count == 11 {
-            return CPF(doc)
+        let arrayDoc = transformaParaArrayDeInt(doc)
+        if arrayDoc.count == 11 {
+            return CPF(arrayDoc)
         }
         else if doc.count == 14 {
-            return CNPJ(doc)
+            return CNPJ(arrayDoc)
         }
         else {
-            return Documento(doc, Verificador(doc))
+            return Documento(arrayDoc, Verificador(arrayDoc))
         }
     }
     func criaEChecaValidade(_ numeroDocumento: String) -> String {
@@ -37,9 +38,9 @@ class Bridge {
             case -1:
                 return "Dado insuficiente"
             case 1:
-                return "CPF \(CPF(numeroDocumento).verificador.verifica())"
+                return "CPF \(CPF(arrayDoc).verificador.verifica())"
             default:
-                return "CNPJ \(CNPJ(numeroDocumento).verificador.verifica())"
+                return "CNPJ \(CNPJ(arrayDoc).verificador.verifica())"
             }
         }
     }

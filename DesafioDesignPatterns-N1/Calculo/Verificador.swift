@@ -12,13 +12,13 @@ public protocol VerificadorProtocol {
 }
 class Verificador {
     // MARK: - Variaveis
-    let doc: String
+    let doc: [Int]
     var digitoVerificador: Array<Int>.SubSequence = []
     var primeirosDigitos: Array<Int>.SubSequence = []
     var baseDeMultiplicar: [Int] = []
     
     // MARK: - Inicializador
-    init(_ documento: String) {
+    init(_ documento: [Int]) {
         self.doc = documento
     }
     func setValues(_ primeirosDigitos: Array<Int>.SubSequence, _ verificador: Array<Int>.SubSequence, _ baseMultiplicacao: [Int]) {
@@ -30,11 +30,6 @@ class Verificador {
     // MARK: - Procedimentos
     func verifica() -> String {
         return imprimeResultado(verificaValidade())
-    }
-    func transformaParaArrayDeInt(_ documento: String) -> [Int] {
-        let array = documento.map { Int(String($0)) }
-        guard let retorno = array as? [Int] else { return [0] }
-        return retorno
     }
     func calculoPrimeiroDigito(_ digitos: Array<Int>.SubSequence, _ baseDeMultiplicar: [Int]) -> Int {
         var val = 0
