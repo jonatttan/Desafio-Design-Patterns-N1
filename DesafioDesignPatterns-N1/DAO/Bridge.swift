@@ -17,7 +17,7 @@ class Bridge {
             return CNPJ(doc)
         }
         else {
-            return Documento("doc", Verificador("doc"))
+            return Documento(doc, Verificador(doc))
         }
     }
     func criaEChecaValidade(_ numeroDocumento: String) -> String {
@@ -27,10 +27,10 @@ class Bridge {
             return ""
         }
         else if arrayDoc == [0,0,0,0,0] {
-            return "Forneça apenas números."
+            return "Forneça apenas números"
         }
         else if verificaSequenciaNumerosIguais(arrayDoc) {
-            return "Sequência inválida."
+            return "Sequência inválida"
         }
         else {
             switch tipo {
@@ -54,13 +54,6 @@ class Bridge {
         default:
             return -1
         }
-//        if doc.count == 11 {
-//            return 1
-//        }
-//        else if doc.count == 14 {
-//            return 2
-//        }
-//        return 0
     }
     func transformaParaArrayDeInt(_ documento: String) -> [Int] {
         let array = documento.map { Int(String($0)) }

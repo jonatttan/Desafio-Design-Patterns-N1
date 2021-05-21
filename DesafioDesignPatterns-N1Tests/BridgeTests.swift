@@ -56,6 +56,12 @@ class BridgeTests: XCTestCase {
         doc = testador.create(documentoIncorreto)
         XCTAssertEqual("CNPJ", "\(type(of: doc!))")
     }
-    
-
+    func testDeveAcusarFornecerApenasNumeros() {
+        documentoIncorreto = "khjkkkj"
+        XCTAssertEqual("Forneça apenas números", testador.criaEChecaValidade(documentoIncorreto))
+    }
+    func testDeveRetornarSequenciaInvalida() {
+        documentoIncorreto = "99999999"
+        XCTAssertEqual("Sequência inválida", testador.criaEChecaValidade(documentoIncorreto))
+    }
 }
