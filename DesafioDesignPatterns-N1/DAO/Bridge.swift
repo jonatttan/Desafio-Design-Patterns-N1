@@ -30,14 +30,14 @@ class Bridge {
         if tipo == 0 {
             return ""
         }
-        else if tipo == -1 {
-            return "Dado insuficiente"
-        }
         else if arrayDoc == [0,0,0,0,0] {
             return "Forneça apenas números"
         }
         else if verificaSequenciaNumerosIguais(arrayDoc) {
             return "Sequência inválida"
+        }
+        else if tipo == -1 {
+            return "Dado insuficiente"
         }
         else {
             let objDoc = create(numeroDocumento)
