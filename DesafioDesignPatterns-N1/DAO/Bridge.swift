@@ -8,6 +8,18 @@
 import UIKit
 
 class Bridge {
+    
+    func create(_ doc: String) -> Documento {
+        if doc.count == 11 {
+            return CPF(doc)
+        }
+        else if doc.count == 14 {
+            return CNPJ(doc)
+        }
+        else {
+            return Documento("doc", Verificador("doc"))
+        }
+    }
     func checaValidade(_ numeroDocumento: String) -> String {
         if numeroDocumento.count == 11 {
             return "CPF \(CPF(numeroDocumento).verificador.verifica())"
@@ -18,11 +30,5 @@ class Bridge {
         else {
             return "Dado insuficiente."
         }
-    }
-    func cadastraCpf(_ doc: String) -> String {
-        return CPF(doc).verificador.verifica()
-    }
-    func cadastraCnpj(_ doc: String) -> String {
-        return CNPJ(doc).verificador.verifica()
     }
 }

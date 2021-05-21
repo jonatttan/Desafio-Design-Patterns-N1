@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8978F0F52658031700B7F866 /* VerificadorCnpjTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8978F0F42658031700B7F866 /* VerificadorCnpjTests.swift */; };
+		89B2AD432657ED760022285D /* BridgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B2AD422657ED760022285D /* BridgeTests.swift */; };
 		89BDFBEF2654613F00436ED1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BDFBEE2654613F00436ED1 /* AppDelegate.swift */; };
 		89BDFBF12654613F00436ED1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BDFBF02654613F00436ED1 /* SceneDelegate.swift */; };
 		89BDFBF32654613F00436ED1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BDFBF22654613F00436ED1 /* ViewController.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8978F0F42658031700B7F866 /* VerificadorCnpjTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificadorCnpjTests.swift; sourceTree = "<group>"; };
+		89B2AD422657ED760022285D /* BridgeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeTests.swift; sourceTree = "<group>"; };
 		89BDFBEB2654613F00436ED1 /* DesafioDesignPatterns-N1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesafioDesignPatterns-N1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89BDFBEE2654613F00436ED1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89BDFBF02654613F00436ED1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				89BDFC082654614300436ED1 /* DesafioDesignPatterns_N1Tests.swift */,
+				89B2AD422657ED760022285D /* BridgeTests.swift */,
+				8978F0F42658031700B7F866 /* VerificadorCnpjTests.swift */,
 				89BDFC0A2654614300436ED1 /* Info.plist */,
 			);
 			path = "DesafioDesignPatterns-N1Tests";
@@ -326,6 +332,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8978F0F52658031700B7F866 /* VerificadorCnpjTests.swift in Sources */,
+				89B2AD432657ED760022285D /* BridgeTests.swift in Sources */,
 				89BDFC092654614300436ED1 /* DesafioDesignPatterns_N1Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

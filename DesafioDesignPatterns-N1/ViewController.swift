@@ -13,10 +13,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var lbNumeroDocumento: UITextField!
     @IBOutlet weak var lbStatusDoc: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     // MARK: - IBActions
     @IBAction func btnValidar(_ sender: UIButton) {
         guard let numeroDocumento = lbNumeroDocumento.text else { return }

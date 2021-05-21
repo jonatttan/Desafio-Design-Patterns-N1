@@ -31,12 +31,6 @@ class Verificador {
     func verifica() -> String {
         return imprimeResultado(verificaValidade())
     }
-    func verificaValidade() -> Bool {
-        let primeiroDigito = calculoPrimeiroDigito(primeirosDigitos, baseDeMultiplicar)
-        let segundoDigito = calculoSegundoDigito(primeirosDigitos, primeiroDigito, baseDeMultiplicar)
-        
-        return comparaDigitosVerificadores(primeiroDigito, segundoDigito, verificador)
-    }
     func transformaParaArrayDeInt(_ documento: String) -> [Int] {
         let array = documento.map { Int(String($0)) }
         guard let retorno = array as? [Int] else { return [0] }
@@ -67,6 +61,12 @@ class Verificador {
         val %= 11
         val = val == 10 ? 0 : val
         return val
+    }
+    func verificaValidade() -> Bool {
+        let primeiroDigito = calculoPrimeiroDigito(primeirosDigitos, baseDeMultiplicar)
+        let segundoDigito = calculoSegundoDigito(primeirosDigitos, primeiroDigito, baseDeMultiplicar)
+        
+        return comparaDigitosVerificadores(primeiroDigito, segundoDigito, verificador)
     }
     func comparaDigitosVerificadores(_ first: Int, _ second: Int, _ dv: Array<Int>.SubSequence) -> Bool {
         if first == dv.first {
