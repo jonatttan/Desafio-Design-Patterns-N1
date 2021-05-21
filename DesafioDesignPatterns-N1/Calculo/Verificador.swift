@@ -7,13 +7,24 @@
 
 import Foundation
 
+public protocol VerificadorProtocol {
+    func setValues()
+}
 class Verificador {
     // MARK: - Variaveis
-    private let documento: String
+    let doc: String
+    var verificador: Array<Int>.SubSequence = []
+    var primeirosDigitos: Array<Int>.SubSequence = []
+    var baseDeMultiplicar: [Int] = []
     
     // MARK: - Inicializador
     init(_ documento: String) {
-        self.documento = documento
+        self.doc = documento
+    }
+    func setValues(_ primeirosDigitos: Array<Int>.SubSequence, _ verificador: Array<Int>.SubSequence, _ baseMultiplicacao: [Int]) {
+        self.verificador = verificador
+        self.primeirosDigitos = primeirosDigitos
+        self.baseDeMultiplicar = baseMultiplicacao
     }
     
     // MARK: - Procedimentos
@@ -21,11 +32,12 @@ class Verificador {
         return imprimeResultado(verificaValidade())
     }
     func verificaValidade() -> Bool {
-        var valido = true
-        valido = documento.count > 8 ? true : false
-        return valido
+        let primeiroDigito = calculoPrimeiroDigito(primeirosDigitos, baseDeMultiplicar)
+        let segundoDigito = calculoSegundoDigito(primeirosDigitos, primeiroDigito, baseDeMultiplicar)
+        
+        return comparaDigitosVerificadores(primeiroDigito, segundoDigito, verificador)
     }
-    func transformaParaArrayDeInt() -> [Int] {
+    func transformaParaArrayDeInt(_ documento: String) -> [Int] {
         let array = documento.map { Int(String($0)) }
         guard let retorno = array as? [Int] else { return [0] }
         return retorno
@@ -65,6 +77,6 @@ class Verificador {
         return false
     }
     func imprimeResultado(_ statusDocumento: Bool) -> String {
-        return ("\(statusDocumento ? "Válido" : "Inválido")")
+        return ("\(statusDocumento ? "válido" : "inválido")")
     }
 }

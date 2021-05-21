@@ -22,6 +22,7 @@
 		89BDFC3B265473D700436ED1 /* VerificadorCPF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BDFC3A265473D700436ED1 /* VerificadorCPF.swift */; };
 		89BDFC402654742600436ED1 /* VerificadorCNPJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BDFC3F2654742600436ED1 /* VerificadorCNPJ.swift */; };
 		89BDFC452654752B00436ED1 /* CNPJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BDFC442654752B00436ED1 /* CNPJ.swift */; };
+		89C08548265730DE0017D3A3 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C08547265730DE0017D3A3 /* Bridge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		89BDFC3A265473D700436ED1 /* VerificadorCPF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificadorCPF.swift; sourceTree = "<group>"; };
 		89BDFC3F2654742600436ED1 /* VerificadorCNPJ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificadorCNPJ.swift; sourceTree = "<group>"; };
 		89BDFC442654752B00436ED1 /* CNPJ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNPJ.swift; sourceTree = "<group>"; };
+		89C08547265730DE0017D3A3 /* Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,15 +117,12 @@
 		89BDFBED2654613F00436ED1 /* DesafioDesignPatterns-N1 */ = {
 			isa = PBXGroup;
 			children = (
-				89BDFC2426546A0C00436ED1 /* Verificador.swift */,
-				89BDFC3F2654742600436ED1 /* VerificadorCNPJ.swift */,
-				89BDFC3A265473D700436ED1 /* VerificadorCPF.swift */,
-				89BDFC2926546A3200436ED1 /* Documento.swift */,
-				89BDFC442654752B00436ED1 /* CNPJ.swift */,
-				89BDFC352654735300436ED1 /* CPF.swift */,
+				89C0854E265731490017D3A3 /* Documento */,
+				89C0854C265731140017D3A3 /* Calculo */,
+				89C0854F265731710017D3A3 /* DAO */,
+				89BDFBF22654613F00436ED1 /* ViewController.swift */,
 				89BDFBEE2654613F00436ED1 /* AppDelegate.swift */,
 				89BDFBF02654613F00436ED1 /* SceneDelegate.swift */,
-				89BDFBF22654613F00436ED1 /* ViewController.swift */,
 				89BDFBF42654613F00436ED1 /* Main.storyboard */,
 				89BDFBFA2654614300436ED1 /* Assets.xcassets */,
 				89BDFBFC2654614300436ED1 /* LaunchScreen.storyboard */,
@@ -149,6 +148,34 @@
 				89BDFC152654614300436ED1 /* Info.plist */,
 			);
 			path = "DesafioDesignPatterns-N1UITests";
+			sourceTree = "<group>";
+		};
+		89C0854C265731140017D3A3 /* Calculo */ = {
+			isa = PBXGroup;
+			children = (
+				89BDFC2426546A0C00436ED1 /* Verificador.swift */,
+				89BDFC3F2654742600436ED1 /* VerificadorCNPJ.swift */,
+				89BDFC3A265473D700436ED1 /* VerificadorCPF.swift */,
+			);
+			path = Calculo;
+			sourceTree = "<group>";
+		};
+		89C0854E265731490017D3A3 /* Documento */ = {
+			isa = PBXGroup;
+			children = (
+				89BDFC2926546A3200436ED1 /* Documento.swift */,
+				89BDFC442654752B00436ED1 /* CNPJ.swift */,
+				89BDFC352654735300436ED1 /* CPF.swift */,
+			);
+			path = Documento;
+			sourceTree = "<group>";
+		};
+		89C0854F265731710017D3A3 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				89C08547265730DE0017D3A3 /* Bridge.swift */,
+			);
+			path = DAO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89BDFC452654752B00436ED1 /* CNPJ.swift in Sources */,
+				89C08548265730DE0017D3A3 /* Bridge.swift in Sources */,
 				89BDFC2A26546A3200436ED1 /* Documento.swift in Sources */,
 				89BDFC2526546A0C00436ED1 /* Verificador.swift in Sources */,
 				89BDFBF32654613F00436ED1 /* ViewController.swift in Sources */,

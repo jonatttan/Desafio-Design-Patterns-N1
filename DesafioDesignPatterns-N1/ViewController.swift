@@ -20,23 +20,11 @@ class ViewController: UIViewController {
     // MARK: - IBActions
     @IBAction func btnValidar(_ sender: UIButton) {
         guard let numeroDocumento = lbNumeroDocumento.text else { return }
-        if numeroDocumento.count == 11 {
-            cadastraCpf(numeroDocumento)
+        
+        lbStatusDoc.text = Bridge().checaValidade(numeroDocumento)
+        if let texto = lbStatusDoc.text {
+            lbStatusDoc.textColor = texto.contains(" válido") ? .systemGreen : .systemRed
         }
-        else if numeroDocumento.count == 14 {
-            cadastraCnpj(numeroDocumento)
-        }
-        else {
-            lbStatusDoc.text = "Qnt dígitos inválido"
-        }
-        lbStatusDoc.textColor = lbStatusDoc.text == "Válido" ? .green : .red
     }
-    func cadastraCpf(_ doc: String) {
-        lbStatusDoc.text = CPF(doc).verificador.verifica()
-    }
-    func cadastraCnpj(_ doc: String) {
-        lbStatusDoc.text = CNPJ(doc).verificador.verifica()
-    }
-    
 }
 
