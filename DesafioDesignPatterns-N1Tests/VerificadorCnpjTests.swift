@@ -11,24 +11,31 @@ import XCTest
 
 class VerificadorCnpjTests: XCTestCase {
     
+    var objCnpj: Documento!
+    var contador: Int!
     override func setUp() {
-        <#code#>
+        objCnpj = CNPJ("79270349000101")
     }
     
     override func tearDown() {
-        <#code#>
+        contador = 0
     }
-    
-    func testSeDocContem14Digitos() {
-        
+    func testDocDeveconter14Digitos() {
+        let contaDigitos = objCnpj.documento.count
+        XCTAssertEqual(14, contaDigitos, "Documento nao possuia quantidade de digitos indicada.")
     }
-    func testSeAtributoVerificadorContem2Digitos() {
-        
+    func testPrimeirosDigitosDeveConter12Digitos() {
+        contador = objCnpj.verificador.primeirosDigitos.count
+        let verificaSePreenchido =  contador > 0 ? true : false
+        XCTAssertTrue(verificaSePreenchido, "O atributo primeirosDigitos encontra-se vazio.")
+        XCTAssertEqual(12, contador, "O atributo primeirosDigitos nao possui a quantidade especificada.")
     }
-    func testSePrimeirosDigitosContem12Digitos() {
-        
+    func testAtributoDigitoVerificadorDeveConter2Digitos() {
+        contador = objCnpj.verificador.digitoVerificador.count
+        XCTAssertEqual(2, contador, "O atributo digitoVerificador nao contem quantidade especificada.")
     }
-    func testSeBaseDeMultiplicarContem12Digitos() {
-        
+    func testBaseDeMultiplicarDeveConter12Digitos() {
+        contador = objCnpj.verificador.baseDeMultiplicar.count
+        XCTAssertEqual(12, contador, "O atributo baseDeMultiplicar nao contem a quantidade especificada.")
     }
 }

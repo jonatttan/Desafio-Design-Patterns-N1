@@ -13,7 +13,7 @@ public protocol VerificadorProtocol {
 class Verificador {
     // MARK: - Variaveis
     let doc: String
-    var verificador: Array<Int>.SubSequence = []
+    var digitoVerificador: Array<Int>.SubSequence = []
     var primeirosDigitos: Array<Int>.SubSequence = []
     var baseDeMultiplicar: [Int] = []
     
@@ -22,7 +22,7 @@ class Verificador {
         self.doc = documento
     }
     func setValues(_ primeirosDigitos: Array<Int>.SubSequence, _ verificador: Array<Int>.SubSequence, _ baseMultiplicacao: [Int]) {
-        self.verificador = verificador
+        self.digitoVerificador = verificador
         self.primeirosDigitos = primeirosDigitos
         self.baseDeMultiplicar = baseMultiplicacao
     }
@@ -66,7 +66,7 @@ class Verificador {
         let primeiroDigito = calculoPrimeiroDigito(primeirosDigitos, baseDeMultiplicar)
         let segundoDigito = calculoSegundoDigito(primeirosDigitos, primeiroDigito, baseDeMultiplicar)
         
-        return comparaDigitosVerificadores(primeiroDigito, segundoDigito, verificador)
+        return comparaDigitosVerificadores(primeiroDigito, segundoDigito, digitoVerificador)
     }
     func comparaDigitosVerificadores(_ first: Int, _ second: Int, _ dv: Array<Int>.SubSequence) -> Bool {
         if first == dv.first {

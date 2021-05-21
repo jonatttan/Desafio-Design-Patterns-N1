@@ -13,11 +13,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var lbNumeroDocumento: UITextField!
     @IBOutlet weak var lbStatusDoc: UILabel!
     
+    override func viewDidLoad() {
+        btnValidar(UIButton())
+    }
     // MARK: - IBActions
     @IBAction func btnValidar(_ sender: UIButton) {
         guard let numeroDocumento = lbNumeroDocumento.text else { return }
         
-        lbStatusDoc.text = Bridge().checaValidade(numeroDocumento)
+        lbStatusDoc.text = Bridge().criaEChecaValidade(numeroDocumento)
         if let texto = lbStatusDoc.text {
             lbStatusDoc.textColor = texto.contains(" válido") ? .systemGreen : .systemRed
         }

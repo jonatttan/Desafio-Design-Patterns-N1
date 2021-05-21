@@ -20,8 +20,11 @@ class Bridge {
             return Documento("doc", Verificador("doc"))
         }
     }
-    func checaValidade(_ numeroDocumento: String) -> String {
-        if numeroDocumento.count == 11 {
+    func criaEChecaValidade(_ numeroDocumento: String) -> String {
+        if numeroDocumento == "" {
+            return ""
+        }
+        else if numeroDocumento.count == 11 {
             return "CPF \(CPF(numeroDocumento).verificador.verifica())"
         }
         else if numeroDocumento.count == 14 {

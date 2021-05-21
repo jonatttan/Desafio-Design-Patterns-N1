@@ -28,18 +28,18 @@ class BridgeTests: XCTestCase {
     }
 
     func testCpfRetornoDeveTerValidacaoComExito()  {
-        XCTAssertEqual("CPF válido", testador.checaValidade(documentoCorreto), "Houve algum erro na validacao do CPF")
+        XCTAssertEqual("CPF válido", testador.criaEChecaValidade(documentoCorreto), "Houve algum erro na validacao do CPF")
     }
     func testCpfRetornoDeveTerValidacaoSemExito()  {
-        XCTAssertEqual("CPF inválido", testador.checaValidade(documentoIncorreto))
+        XCTAssertEqual("CPF inválido", testador.criaEChecaValidade(documentoIncorreto))
     }
     func testCnpjDeveRetornarValidacaoComExito() {
         documentoCorreto = "88773310000190"
-        XCTAssertEqual("CNPJ válido", testador.checaValidade(documentoCorreto))
+        XCTAssertEqual("CNPJ válido", testador.criaEChecaValidade(documentoCorreto))
     }
     func testCnpjDeveRetornarValidacaoSemExito() {
         documentoIncorreto = "88773310000195"
-        XCTAssertEqual("CNPJ inválido", testador.checaValidade(documentoIncorreto))
+        XCTAssertEqual("CNPJ inválido", testador.criaEChecaValidade(documentoIncorreto))
     }
     func testTipoDeveSerCPF() {
         documentoCorreto = "09437187088"
