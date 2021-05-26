@@ -8,12 +8,22 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    // MARK: - IBOutlets
+    @IBOutlet weak var lbNumeroDocumento: UITextField!
+    @IBOutlet weak var lbStatusDoc: UILabel!
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        btnValidar(UIButton())
     }
-
-
+    // MARK: - IBActions
+    @IBAction func btnValidar(_ sender: UIButton) {
+        guard let numeroDocumento = lbNumeroDocumento.text else { return }
+        
+        lbStatusDoc.text = Bridge().criaEChecaValidade(numeroDocumento)
+        if let texto = lbStatusDoc.text {
+            lbStatusDoc.textColor = texto.contains(" válido") ? .systemGreen : .systemRed
+        }
+    }
 }
 
